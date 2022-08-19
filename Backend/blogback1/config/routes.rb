@@ -7,12 +7,15 @@ Rails.application.routes.draw do
   get "home" ,to: "blogs#index"
   #edit 
   put "blog/:title" ,to: "blogs#edit"
+
   #add
   post "blog" ,to: "blogs#post1"
 
   #dele
-  delete "blog/:title", to: "blogs#del1"
+  delete "blog/:blogid", to: "blogs#del1"
 
+  #get single blog
+  get "blogs/:blogid", to:"blogs#singleblog"
 
   #for search
   get "search", to: "blogs#search"

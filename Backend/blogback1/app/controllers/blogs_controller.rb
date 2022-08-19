@@ -7,8 +7,9 @@ class BlogsController < ApplicationController
         userid=params[:userid]
         blogid=params[:blogid]
         content=params[:content]
+        img=params[:img]
         
-        blogs= Blog.new(blogid: blogid,userid: userid,title: title,content: content  )
+        blogs= Blog.new(blogid: blogid,userid: userid,title: title,content: content,img: img  )
         blogs.save
         # data=[n,y,m,po]
         render  :json => Blog.all
@@ -26,9 +27,9 @@ class BlogsController < ApplicationController
     end
     def del1
         
-        m=params[:title]
+        m=params[:blogid]
         
-        
+        id = Blog.select(:id).where(blogid:m)
         Blog.find(m).destroy
         
         # data=[n,y,m,po]
@@ -36,6 +37,12 @@ class BlogsController < ApplicationController
 
 
     end
+    def singleblog
+        m=params[:blogid]
+        records=Blog.where(blogid: m)
+        render  :json => records
+    end
+
     def search
         
         m=params[:title].downcase
@@ -60,7 +67,7 @@ class BlogsController < ApplicationController
         # l=pp.to_s
         # sql = "Select Title from blogs where userid = "+ l
         # records_array = ActiveRecord::Base.connection.execute(sql)
-        title=Blog.select(:title, :content).where(userid: userid)
+        title=Blog.select(:title, :content,:img,:blogid).where(userid: userid)
         render :json => title
     end
 end
