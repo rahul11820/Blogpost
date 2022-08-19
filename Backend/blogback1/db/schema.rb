@@ -11,19 +11,20 @@
 # It's strongly recommended that you check this file into your version control system.
 
 ActiveRecord::Schema[7.0].define(version: 2022_08_18_133003) do
-  create_table "blogs", primary_key: "blogid", force: :cascade do |t|
+  create_table "blogs", force: :cascade do |t|
+    t.integer "blogid"
     t.integer "userid"
     t.string "title"
     t.text "content"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.text "img"
   end
 
-  create_table "users", primary_key: "userid", force: :cascade do |t|
+  create_table "users", force: :cascade do |t|
     t.string "username", null: false
     t.string "email", null: false
     t.string "password", null: false
+    t.integer "userid", null: false
     t.integer "noBlogs"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
