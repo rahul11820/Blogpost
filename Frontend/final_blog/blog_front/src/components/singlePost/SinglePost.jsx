@@ -18,7 +18,7 @@ export default function SinglePost(){
     useEffect(()=>{
         getBlogs();
     },[])
-
+   
 
     return(
         <div className="singlePost">
@@ -27,16 +27,15 @@ export default function SinglePost(){
             <img className="singlePostImg" src={blog.img} alt= ""></img>
             <h1 className="singlePostTitle">
                 {blog.title}
-            <div className="singlePostEdit">
-                <i className= " singlePostIcon singlePostIcon1 fa-solid fa-pen-to-square"></i>
-                <i className=" singlePostIcon singlePostIcon2 fa-solid fa-trash-can"></i>
-            </div>
+            
             <div className="singlePostInfo">
                 <p className="singlePostDes">{blog.content}
                 </p>
             </div>
             </h1>
             </div>
+            {/* <button onClick={delblog.bind(this,blog.id)}>Delete</button> */}
+
         </div>
     )
    

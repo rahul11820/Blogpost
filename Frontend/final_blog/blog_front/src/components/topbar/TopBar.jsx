@@ -1,11 +1,21 @@
 import { useState } from "react"
 import "./topbar.css"
-import { Link } from "react-router-dom"
+import { Link,useNavigate } from "react-router-dom"
+
+
 export default function TopBar(){
     const [message,setMessage]=useState("")
     // const search = ()={
+        const navigate = useNavigate()
         
     // }
+    const logout1 = () => {
+        console.log(window.localStorage.getItem('id'))
+        window.localStorage.setItem('id', JSON.stringify(0))
+        console.log(window.localStorage.getItem('id'))
+        navigate("/Signin")
+    }
+
     return(
         <div className="top">
             <div className="topLeft">
@@ -15,12 +25,12 @@ export default function TopBar(){
             </div>
             <div className="topCenter">
                 <ul className="topList">
-                    <li className="topListItem"><a class="nav-link" href="http://localhost:3001/">Home</a></li>
+                    <li className="topListItem"><a class="nav-link" href="http://localhost:3001/home">Home</a></li>
                     
                     <li className="topListItem"><a class="nav-link" href="/Write">Write</a></li>
-                    <li className="topListItem"><a class="nav-link" href="/Single">SignIn</a></li>
-                    <li className="topListItem">Register</li>
-                    <li className="topListItem">Logout</li>
+                    {/* <li className="topListItem"><a class="nav-link" href="/Signin">SignIn</a></li>
+                    <li className="topListItem"><a class="nav-link" href="/Signup">Signup</a></li> */}
+                    <li className="topListItem" onClick={logout1}>Logout</li>
                 </ul>
                 
             </div>

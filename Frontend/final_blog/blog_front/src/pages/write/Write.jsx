@@ -1,37 +1,43 @@
 import "./write.css"
 import {useState} from 'react'
 import axios from 'axios'
-import { Link } from "react-router-dom"
+import { Link,useNavigate } from "react-router-dom"
+import TopBar from "../../components/topbar/TopBar"
+
 export default function Write(){
     const [title, setTitle]=useState("")
     const [content,setContent]=useState("")
     const [img,setImg]=useState("")
     //const [bodyparams,setBodyparams]=useState({"blogid":"","userid":"","title":"","content":"","img":""})
-    const [blogid1,setblogid] =useState(2);
-    const [userid1,setuserid] =useState(2);
+    
     const redirectToHome = ()=> {
         <Link to="/"></Link>
     }
 
+    const navigate =useNavigate()
+    const userid=window.localStorage.getItem('id')
+
     const addBlogs = async ()=> {
 
-        setblogid(blogid1+1)
-        setuserid(userid1+1)
+        
         
 
         
         await axios.post("http://[::1]:3000/blog",{
-            "blogid":blogid1,
-            "userid":userid1,
+            "userid":userid,
             "title":title,
             "content":content,
             "img":img
         })
+        navigate("/Profile")
+
     }
 
 
 
     return(
+        <>
+        <TopBar />
         <div className="Write">
             <form className="writeForm">
                 <div className="writeFormGroup">
@@ -62,9 +68,11 @@ export default function Write(){
                         onChange={(event)=>{setContent(event.target.value)}}
                     />
                 </div>
-                <button className="writeSubmit" onClick={addBlogs}>Publish</button>
+                
             </form>
+            <button className="writeSubmit" onClick={addBlogs}>Publish</button>
         </div>
+        </>
     )
 
 }
