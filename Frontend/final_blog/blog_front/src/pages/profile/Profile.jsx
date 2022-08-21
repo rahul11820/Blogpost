@@ -60,9 +60,15 @@ export default function Profile(){
                     <div className="post">
                         {console.log(blog.id)}
             <Link to={"/Single/"+blog.id}><img className="postImg" src={blog.img} alt=" "></img></Link>
+<<<<<<< HEAD
             <div className="postInfo">
             
        
+=======
+           <Link to={"/Edit/"+blog.id}><i className= " singlePostIcon singlePostIcon1 fa-solid fa-pen-to-square"></i></Link> 
+            <button onClick={delblog.bind(this,blog.id)}><i className=" singlePostIcon singlePostIcon2 fa-solid fa-trash-can"></i></button>
+        <div className="postInfo">
+>>>>>>> 1ed81a4e1c435a7b4f5ba11cd272b1f82d3b9b56
             <span className="postTitle">{blog.title}</span>
             
             <span className="postDes"> {blog.content}</span>

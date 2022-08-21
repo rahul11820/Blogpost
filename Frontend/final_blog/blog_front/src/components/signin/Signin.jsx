@@ -1,6 +1,10 @@
+<<<<<<< HEAD
 
 import "./signin.css"
 import "bootstrap/dist/css/bootstrap.min.css"
+=======
+//import "./write.css"
+>>>>>>> 1ed81a4e1c435a7b4f5ba11cd272b1f82d3b9b56
 import {useState} from 'react'
 import axios from 'axios'
 import { Link ,useNavigate} from "react-router-dom"
@@ -43,6 +47,7 @@ export default function Signin(){
 
 
     return(
+<<<<<<< HEAD
         <div className="maincontainer">
             <form className="formcontainer">
             <div className="formcontainer2">
@@ -63,23 +68,55 @@ export default function Signin(){
                 <input  className="text2" 
                     type ="text"
                    
+=======
+        <div >
+            <form>
+            <div>
+                <input
+                    type ="text"
+                    placeholder='email'
+                    value={email}
+                    onChange={(event)=>{setEmail(event.target.value)}}
+                />
+                
+            </div>
+            <div>
+                <input
+                    type ="text"
+                    placeholder='password'
+>>>>>>> 1ed81a4e1c435a7b4f5ba11cd272b1f82d3b9b56
                     value={password}
                     onChange={(event)=>{setPassword(event.target.value)}}
                 />
                 
             </div>
+<<<<<<< HEAD
             </div>
             </form>
             <button className="button" onClick={addUser}>SignIn</button>
             
             
             <div className="bottom">
+=======
+            
+            </form>
+            <button onClick={addUser}>SignIn</button>
+            <div>
+>>>>>>> 1ed81a4e1c435a7b4f5ba11cd272b1f82d3b9b56
                 Dont have a account?
                 <Link to={"/Signup"}>Sign Up</Link>
             </div>
             
+<<<<<<< HEAD
            
         </div>
     )
 
 }
+=======
+
+        </div>
+    )
+
+}
+>>>>>>> 1ed81a4e1c435a7b4f5ba11cd272b1f82d3b9b56

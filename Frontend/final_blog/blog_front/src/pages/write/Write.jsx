@@ -29,7 +29,11 @@ export default function Write(){
             "content":content,
             "img":img
         })
+<<<<<<< HEAD
         navigate("/Home")
+=======
+        navigate("/Profile")
+>>>>>>> 1ed81a4e1c435a7b4f5ba11cd272b1f82d3b9b56
 
     }
 
@@ -38,11 +42,19 @@ export default function Write(){
     return(
         <>
         <TopBar />
+<<<<<<< HEAD
         <div className="maincontainer1">
             <form className="formcontainer3">
                 <div className="formcontainer4">
                 <div>
                     <label htmlFor="fileInput">ImgUrl
+=======
+        <div className="Write">
+            <form className="writeForm">
+                <div className="writeFormGroup">
+                    <label htmlFor="fileInput">
+                        <i className="fa-solid fa-circle-plus"></i>
+>>>>>>> 1ed81a4e1c435a7b4f5ba11cd272b1f82d3b9b56
                     </label>
                     {/* <input type="file" id="fileInput" ></input> */}
                     <input className="text4"
@@ -72,12 +84,18 @@ export default function Write(){
                         onChange={(event)=>{setContent(event.target.value)}}
                     />
                 </div>
+<<<<<<< HEAD
                 </div>
                 
                 </form>
             <button className="button1" onClick={addBlogs}>Publish</button>
             
            
+=======
+                
+            </form>
+            <button className="writeSubmit" onClick={addBlogs}>Publish</button>
+>>>>>>> 1ed81a4e1c435a7b4f5ba11cd272b1f82d3b9b56
         </div>
         </>
     )

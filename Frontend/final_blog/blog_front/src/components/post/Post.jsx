@@ -34,7 +34,11 @@ export default function Post(){
              blogs.map((blog)=>{
                 return(
                     <div className="post">
+<<<<<<< HEAD
             <Link to={"/Single/"+blog.id}><img className="postImg1" src={blog.img} alt=" "></img></Link>
+=======
+            <Link to={"/Single/"+blog.id}><img className="postImg" src={blog.img} alt=" "></img></Link>
+>>>>>>> 1ed81a4e1c435a7b4f5ba11cd272b1f82d3b9b56
         <div className="postInfo">
             <span className="postTitle">{blog.title}</span>
             <hr/>
