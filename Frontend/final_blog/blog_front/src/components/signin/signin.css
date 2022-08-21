@@ -1,6 +1,6 @@
 .maincontainer{
 height:570px;
-background-image: linear-gradient(to right, rgb(140, 228, 140) ,rgb(124, 124, 227));
+background-image: linear-gradient(to right, rgb(140, 228, 140), white);
 /* Center and scale the image nicely */
 background-position: center;
 background-repeat: no-repeat;
