@@ -24,13 +24,14 @@ function Search()
     return(
         
        
+            <>
+            <TopBar />
             
-            
-                blogs.map((blog)=>{
+                {blogs.map((blog)=>{
                     return(
                         <div className="post">
         
-                <Link to={"/Single/"+blog.blogid}><img className="postImg" src={blog.img} alt=" "></img></Link>
+                <Link to={"/Single/"+blog.id}><img className="postImg" src={blog.img} alt=" "></img></Link>
             <div className="postInfo">
                 <span className="postTitle">{blog.title}</span>
                 <hr/>
@@ -38,7 +39,9 @@ function Search()
             </div>
             </div>
                     )
-                })
+                })}
+
+</>
             
         
     )
