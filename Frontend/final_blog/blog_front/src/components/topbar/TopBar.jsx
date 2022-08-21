@@ -15,13 +15,12 @@ export default function TopBar(){
         console.log(window.localStorage.getItem('id'))
         navigate("/Signin")
     }
-<<<<<<< HEAD
+
     const Write1 = () => {
         
         navigate("/Write")
     }
-=======
->>>>>>> 1ed81a4e1c435a7b4f5ba11cd272b1f82d3b9b56
+
 
     return(
         <div className="top">
@@ -34,11 +33,8 @@ export default function TopBar(){
                 <ul className="topList">
                     <li className="topListItem"><a class="nav-link" href="http://localhost:3001/home">Home</a></li>
                     
-<<<<<<< HEAD
+
                     <li className="topListItem" onClick={Write1}>Write </li>
-=======
-                    <li className="topListItem"><a class="nav-link" href="/Write">Write</a></li>
->>>>>>> 1ed81a4e1c435a7b4f5ba11cd272b1f82d3b9b56
                     {/* <li className="topListItem"><a class="nav-link" href="/Signin">SignIn</a></li>
                     <li className="topListItem"><a class="nav-link" href="/Signup">Signup</a></li> */}
                     <li className="topListItem" onClick={logout1}>Logout</li>

@@ -1,8 +1,5 @@
-<<<<<<< HEAD
-import "./edit.css"
-=======
 
->>>>>>> 1ed81a4e1c435a7b4f5ba11cd272b1f82d3b9b56
+import "./edit.css"
 import {useState} from 'react'
 import axios from 'axios'
 import { Link, useParams,useNavigate, Navigate } from "react-router-dom"
@@ -37,46 +34,24 @@ export default function Edit(){
     return(
         <>
         <TopBar />
-<<<<<<< HEAD
         <div className="maincontainer">
             <form className="formcontainer7">
                 <div className="formcontainer8">
                     <label htmlFor="fileInput">
-                        
-=======
-        <div className="Write">
-            <form className="writeForm">
-                <div className="writeFormGroup">
-                    <label htmlFor="fileInput">
-                        <i className="fa-solid fa-circle-plus"></i>
->>>>>>> 1ed81a4e1c435a7b4f5ba11cd272b1f82d3b9b56
                     </label>
                     {/* <input type="file" id="fileInput" ></input> */}
                     
-
-                        
-<<<<<<< HEAD
                 
                 <div >
                     <textarea className="text7"
-=======
-                </div>
-                <div className="writeFormGroup">
-                    <textarea
->>>>>>> 1ed81a4e1c435a7b4f5ba11cd272b1f82d3b9b56
                         placeholder="Write Description" 
                         vaule={content}
                         onChange={(event)=>{setContent(event.target.value)}}
                     />
                 </div>
-<<<<<<< HEAD
                 </div>
             </form>
             <button className="button7" onClick={addBlogs}>Publish</button>
-=======
-            </form>
-            <button className="writeSubmit" onClick={addBlogs}>Publish</button>
->>>>>>> 1ed81a4e1c435a7b4f5ba11cd272b1f82d3b9b56
 
             
         </div>
