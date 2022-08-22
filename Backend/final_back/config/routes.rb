@@ -22,7 +22,7 @@ Rails.application.routes.draw do
   #for the user blog list
   get "user/:id", to: "blogs#userblogs"
 
-  #for the signup to the page
+  #for the signup to the page or ADD user
   post "signup", to: "users#adduser"
 
   #to show user

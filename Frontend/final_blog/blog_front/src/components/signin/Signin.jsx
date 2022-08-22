@@ -35,7 +35,7 @@ export default function Signin(){
         }
         else
         {
-            navigate("/Home")
+            navigate("/Sucess")
         }
 
     }
@@ -75,6 +75,10 @@ export default function Signin(){
             <div className="bottom">
                 Dont have a account?
                 <Link to={"/Signup"}>Sign Up</Link>
+            </div>
+            <div className="bottom">
+                Just want to Surf the Website?
+                <Link to={"/home"}>Home</Link>
             </div>
            
         </div>

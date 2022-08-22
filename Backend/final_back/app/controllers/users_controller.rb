@@ -4,7 +4,11 @@ class UsersController < ApplicationController
         email =params[:email]
         password =params[:password]
         
-        if username!="" && email!="" && password!="" 
+        a=User.select(:id).where(username: username)
+        b=User.select(:id).where(email: email)
+        c=User.select(:id).where(password: password)
+        if username!="" && email!="" && password!="" && a[0]==nil&&b[0]==nil&&c[0]==nil
+            
             User.create(username: username,email: email, password: password)
             
             render :json => 1

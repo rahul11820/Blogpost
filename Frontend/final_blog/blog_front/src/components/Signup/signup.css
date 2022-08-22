@@ -3,8 +3,8 @@
   
 
   /* Full height */
-  height:570px;
-  background-image: linear-gradient(to right, rgb(140, 228, 140) ,rgb(124, 124, 227));
+  height:100vh;
+  background-image: linear-gradient(to right, rgb(195, 245, 195) ,rgb(255, 255, 255));
   /* Center and scale the image nicely */
   background-position: center;
   background-repeat: no-repeat;
