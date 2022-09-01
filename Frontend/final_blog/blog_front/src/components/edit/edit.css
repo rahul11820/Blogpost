@@ -1,34 +1,24 @@
 .formcontainer7 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100vw;
-    height:70vh;
-   
-  }
-  
-  .formcontainer8 {
-    width:500px;
-    box-shadow: rgb(0 0 0 / 16%) 1px 1px 10px;
-    padding-top: 30px;
-    padding-bottom: 20px;
-    height:200px;
-    border-radius: 8px;
-    background-color: white;
-    margin-left: 100px;
-  }
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height:70vh;
+ 
+}
+
     .text7{
         margin-top:20px;
-        border-radius: 20px;
-        margin-left:150px;
-        height: 40px;
+        margin-left:100px;
+        height:120px;
+        width:400px;
         
       }
 
   
 .button7{
     margin-top:0px;
-     margin-left: 600px;
+     margin-left:600px;
      height:40px;
      background-color: #4CAF50; /* Green */
      border: none;

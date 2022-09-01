@@ -49,11 +49,21 @@ export default function Profile(){
         await axios.delete("http://[::1]:3000/blog/"+blogid)
         window.location.reload(false);
     }
+    // function Deluser(){
+    //     return(<div>
+    //         <button className="delbtn"><Link to={""}>Delete User</Link></button>
+    //         </div>)
+        
+    // }
 
     return(
+       
     <>
+     
         <TopBar />
+        {/* {!flag&&<Deluser />} */}
         {flag&&<Notlog/>}
+        
             { blogs.map((blog)=>{
                 return(
                     <div className="post">

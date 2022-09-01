@@ -3,7 +3,7 @@ import {useState} from 'react'
 import axios from 'axios'
 import { Link,useNavigate } from "react-router-dom"
 import TopBar from "../../components/topbar/TopBar"
-
+import RichTextEditor from "../../components/richtext/RichTextEditor"
 export default function Write(){
     const [title, setTitle]=useState("")
     const [content,setContent]=useState("")
@@ -81,9 +81,9 @@ export default function Write(){
                 </form>
             <button className="button1" onClick={addBlogs}>Publish</button>
             
-           
+           {/* <RichTextEditor /> */}
 
-
+            
         </div>
         </>
     )

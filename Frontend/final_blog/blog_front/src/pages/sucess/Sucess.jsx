@@ -3,6 +3,7 @@ import {useState} from 'react'
 import React from 'react'
 import Confetti from "react-confetti"
 import axios from 'axios'
+import TopBar from '../../components/topbar/TopBar'
 import { Link ,useNavigate} from "react-router-dom"
 export default function Sucess(){
     //const [username, setUsername]=useState("")
@@ -24,8 +25,9 @@ export default function Sucess(){
         <div >
             <Confetti
       width={1400}
-      height={1400}
+      height={50}
     />
+    <TopBar />
            <h1>SucessFully Logged In!!! </h1>
             <div>
                 Click on the home 

@@ -12,6 +12,7 @@ import False from "./pages/false/False";
 import Sucess from "./pages/sucess/Sucess";
 import Again from "./pages/again/Again";
 import Logout from "./pages/logout/Logout";
+import Serviceworker from "./serviceworker";
 import {
   BrowserRouter ,
   Routes,
@@ -21,6 +22,19 @@ import {
 } from "react-router-dom";
 import SinglePost from "./components/singlePost/SinglePost";
 function App() {
+
+  // window.vapidPublicKey = new Uint8Array(<%= @decodedVapidPublicKey %>);
+
+  if (navigator.serviceWorker) {
+    navigator.serviceWorker.register('/serviceworker.js')
+    .then(function(reg) {
+      console.log('Service worker change, registered the service worker');
+    });
+  }
+  // Otherwise, no push notifications :(
+  else {
+    console.error('Service worker is not supported in this browser');
+  }
 
   const id = window.localStorage.getItem('id')
 
@@ -35,6 +49,15 @@ function App() {
     }
   }
   return (
+
+    // <>
+    // <div>
+    //   fsjdk
+    // </div>
+    // </>
+
+
+
     
     <BrowserRouter>
     

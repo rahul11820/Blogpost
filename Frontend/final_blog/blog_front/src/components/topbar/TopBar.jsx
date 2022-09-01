@@ -7,28 +7,48 @@ export default function TopBar(){
     const [message,setMessage]=useState("")
     // const search = ()={
         const navigate = useNavigate()
+
+        const user_id=window.localStorage.getItem('id')
+        let flag = false
+        console.log(user_id)
+    if(user_id==='0')
+    {
+        flag=true
+        
+    }
         
     // }
     const logout1 = () => {
         console.log(window.localStorage.getItem('id'))
         window.localStorage.setItem('id', JSON.stringify(0))
         console.log(window.localStorage.getItem('id'))
-        navigate("/Signin")
+        navigate("/Logout")
     }
 
     const Write1 = () => {
         
         navigate("/Write")
     }
-
+    function SigninSignup(){
+        return (
+            <>
+            <li className="topListItem"><a class="nav-link" href="/Signup" >SignUp</a></li>
+            <li className="topListItem"><a class="nav-link" href="SignIn" >SignIn</a></li> 
+            </>
+            )
+    }
+    function Notlogged(){
+        return (
+            <>
+            <li className="topListItem" onClick={logout1}>Logout</li>
+            </>
+            )
+    }
+     
 
     return(
         <div className="top">
-            <div className="topLeft">
-                <i className="topIcon fa-brands fa-facebook"></i>
-                <i className="topIcon fa-brands fa-square-twitter"></i>
-                <i className="topIcon fa-brands fa-square-instagram"></i>
-            </div>
+           
             <div className="topCenter">
                 <ul className="topList">
                     <li className="topListItem"><a class="nav-link" href="http://localhost:3001/home">Home</a></li>
@@ -37,14 +57,16 @@ export default function TopBar(){
                     <li className="topListItem" onClick={Write1}>Write </li>
                     {/* <li className="topListItem"><a class="nav-link" href="/Signin">SignIn</a></li>
                     <li className="topListItem"><a class="nav-link" href="/Signup">Signup</a></li> */}
-                    <li className="topListItem" onClick={logout1}>Logout</li>
+                     {flag&&<SigninSignup />}
+                     {!flag&&<Notlogged />}
+                    
                 </ul>
                 
             </div>
             <div className="topRight">
-            <Link to={"/Profile"} ><img className="topImg" src=" https://opt.toiimg.com/recuperator/img/toi/m-69257289/69257289.jpg" alt=" "></img></Link>
+           
                     
-                    <input 
+                    <input className="search"
                     placeholder="Search Blog" 
                     type="text" 
                     value={message} 
@@ -54,7 +76,7 @@ export default function TopBar(){
                    <button className="button3"> <Link to={"/search/"+message} >
                     Search
                     </Link></button>
-                   
+                   <Link to={"/Profile"} > <i className="profile fa-solid fa-user" ></i></Link>
                 
             </div>
         </div>

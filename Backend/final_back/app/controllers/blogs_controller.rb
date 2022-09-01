@@ -49,16 +49,16 @@ class BlogsController < ApplicationController
 
     def search
         
-        m=params[:title].downcase
+        # m=params[:title].downcase
         
         
         # sql = "Select * from blogs where title like '%"+ m + "%'"
         # records_array = ActiveRecord::Base.connection.execute(sql)
-        records_array=Blog.all.where("lower(title) LIKE :search", search: "%#{m}%" )
-
+        # records_array=Blog.all.where("lower(title) LIKE :search", search: "#{m}%" )
+        rec = User.select(:id).having('id>3').group('username')
         
         # data=[n,y,m,po]
-        render  :json => records_array
+        render  :json => rec
 
 
     end

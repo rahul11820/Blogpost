@@ -11,7 +11,7 @@ class UsersController < ApplicationController
             
             User.create(username: username,email: email, password: password)
             
-            render :json => 1
+            render :json => id1=User.select(:id).where(email: email)
         else
             render :json => 0
         end
