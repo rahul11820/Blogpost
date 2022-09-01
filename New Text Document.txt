@@ -1,3 +1,0 @@
-to do :
-Username null ;;;please do it
-Adding the username while it is null.. it should not be happening
